@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10876D81F281361C7D783D3B /* Pods_HondaHelp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0216319E05CC3CC312C9D20 /* Pods_HondaHelp.framework */; };
+		4D9EF45C083B767495862331 /* Pods_HondaResponderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6234D0AAF6A2C27EA6B8D /* Pods_HondaResponderTests.framework */; };
 		5EA6034A1FCCACD90050BAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA603491FCCACD90050BAB6 /* AppDelegate.swift */; };
 		5EA6034C1FCCACD90050BAB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6034B1FCCACD90050BAB6 /* ViewController.swift */; };
 		5EA6034F1FCCACDA0050BAB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA6034D1FCCACDA0050BAB6 /* Main.storyboard */; };
 		5EA603511FCCACDA0050BAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EA603501FCCACDA0050BAB6 /* Assets.xcassets */; };
 		5EA603541FCCACDA0050BAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA603521FCCACDA0050BAB6 /* LaunchScreen.storyboard */; };
 		5EA6035F1FCCACDA0050BAB6 /* HondaResponderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6035E1FCCACDA0050BAB6 /* HondaResponderTests.swift */; };
+		77A763D3B1B5DDD2BD43D77F /* Pods_HondaResponder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D98253680E085D5881269 /* Pods_HondaResponder.framework */; };
+		7FECD65E231B23835C8C5D2F /* Pods_HondaHelpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC6E89E0A240988461BD0E1 /* Pods_HondaHelpTests.framework */; };
 		93166E3F1FCCB918000D861C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93166E3E1FCCB918000D861C /* AppDelegate.swift */; };
 		93166E411FCCB918000D861C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93166E401FCCB918000D861C /* ViewController.swift */; };
 		93166E441FCCB918000D861C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93166E421FCCB918000D861C /* Main.storyboard */; };
@@ -39,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B6ED8F4F587A8F886A92AAE /* Pods-HondaHelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaHelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HondaHelp/Pods-HondaHelp.release.xcconfig"; sourceTree = "<group>"; };
 		5EA603461FCCACD90050BAB6 /* HondaResponder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HondaResponder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA603491FCCACD90050BAB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EA6034B1FCCACD90050BAB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,10 @@
 		5EA6035A1FCCACDA0050BAB6 /* HondaResponderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HondaResponderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA6035E1FCCACDA0050BAB6 /* HondaResponderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HondaResponderTests.swift; sourceTree = "<group>"; };
 		5EA603601FCCACDA0050BAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68E6234D0AAF6A2C27EA6B8D /* Pods_HondaResponderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HondaResponderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709ADD9172CB03D641844394 /* Pods-HondaHelpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaHelpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HondaHelpTests/Pods-HondaHelpTests.release.xcconfig"; sourceTree = "<group>"; };
+		7CBFEADE1BB4CD1F58CA51B5 /* Pods-HondaResponderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaResponderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HondaResponderTests/Pods-HondaResponderTests.release.xcconfig"; sourceTree = "<group>"; };
+		88D49DEC8BBA7840423B57C0 /* Pods-HondaResponder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaResponder.release.xcconfig"; path = "Pods/Target Support Files/Pods-HondaResponder/Pods-HondaResponder.release.xcconfig"; sourceTree = "<group>"; };
 		93166E3C1FCCB918000D861C /* HondaHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HondaHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93166E3E1FCCB918000D861C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93166E401FCCB918000D861C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +68,13 @@
 		93166E4F1FCCB918000D861C /* HondaHelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HondaHelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93166E531FCCB918000D861C /* HondaHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HondaHelpTests.swift; sourceTree = "<group>"; };
 		93166E551FCCB918000D861C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954D98253680E085D5881269 /* Pods_HondaResponder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HondaResponder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98307F38C3568E356517BA8D /* Pods-HondaResponder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaResponder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HondaResponder/Pods-HondaResponder.debug.xcconfig"; sourceTree = "<group>"; };
+		9DC6E89E0A240988461BD0E1 /* Pods_HondaHelpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HondaHelpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB372D6FD8C036D7880F27B2 /* Pods-HondaHelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaHelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HondaHelp/Pods-HondaHelp.debug.xcconfig"; sourceTree = "<group>"; };
+		B5C2B2AB52E74CA9B9CB7A47 /* Pods-HondaHelpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaHelpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HondaHelpTests/Pods-HondaHelpTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C70FF8A0B3D52A7C660C31C2 /* Pods-HondaResponderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HondaResponderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HondaResponderTests/Pods-HondaResponderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0216319E05CC3CC312C9D20 /* Pods_HondaHelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HondaHelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A763D3B1B5DDD2BD43D77F /* Pods_HondaResponder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D9EF45C083B767495862331 /* Pods_HondaResponderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10876D81F281361C7D783D3B /* Pods_HondaHelp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,12 +106,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FECD65E231B23835C8C5D2F /* Pods_HondaHelpTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04218932D413258646D20DBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0216319E05CC3CC312C9D20 /* Pods_HondaHelp.framework */,
+				9DC6E89E0A240988461BD0E1 /* Pods_HondaHelpTests.framework */,
+				954D98253680E085D5881269 /* Pods_HondaResponder.framework */,
+				68E6234D0AAF6A2C27EA6B8D /* Pods_HondaResponderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		316DF8A6F7DA51A15C6B3C93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB372D6FD8C036D7880F27B2 /* Pods-HondaHelp.debug.xcconfig */,
+				3B6ED8F4F587A8F886A92AAE /* Pods-HondaHelp.release.xcconfig */,
+				B5C2B2AB52E74CA9B9CB7A47 /* Pods-HondaHelpTests.debug.xcconfig */,
+				709ADD9172CB03D641844394 /* Pods-HondaHelpTests.release.xcconfig */,
+				98307F38C3568E356517BA8D /* Pods-HondaResponder.debug.xcconfig */,
+				88D49DEC8BBA7840423B57C0 /* Pods-HondaResponder.release.xcconfig */,
+				C70FF8A0B3D52A7C660C31C2 /* Pods-HondaResponderTests.debug.xcconfig */,
+				7CBFEADE1BB4CD1F58CA51B5 /* Pods-HondaResponderTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5EA6033D1FCCACD90050BAB6 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +147,8 @@
 				93166E3D1FCCB918000D861C /* HondaHelp */,
 				93166E521FCCB918000D861C /* HondaHelpTests */,
 				5EA603471FCCACD90050BAB6 /* Products */,
+				316DF8A6F7DA51A15C6B3C93 /* Pods */,
+				04218932D413258646D20DBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EA603631FCCACDA0050BAB6 /* Build configuration list for PBXNativeTarget "HondaResponder" */;
 			buildPhases = (
+				EEAF3527B1AC894955346620 /* [CP] Check Pods Manifest.lock */,
 				5EA603421FCCACD90050BAB6 /* Sources */,
 				5EA603431FCCACD90050BAB6 /* Frameworks */,
 				5EA603441FCCACD90050BAB6 /* Resources */,
+				29447CA6D84531A191000C06 /* [CP] Embed Pods Frameworks */,
+				74D0CFB12CBA9378995F5184 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,9 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EA603661FCCACDA0050BAB6 /* Build configuration list for PBXNativeTarget "HondaResponderTests" */;
 			buildPhases = (
+				E961E329CE109508F996B454 /* [CP] Check Pods Manifest.lock */,
 				5EA603561FCCACDA0050BAB6 /* Sources */,
 				5EA603571FCCACDA0050BAB6 /* Frameworks */,
 				5EA603581FCCACDA0050BAB6 /* Resources */,
+				F3950666DB93A1690F6F09E0 /* [CP] Embed Pods Frameworks */,
+				EB110547E98DE7EA6128CAA2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,9 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93166E561FCCB918000D861C /* Build configuration list for PBXNativeTarget "HondaHelp" */;
 			buildPhases = (
+				E70E10C7C8587D04DBB977A4 /* [CP] Check Pods Manifest.lock */,
 				93166E381FCCB918000D861C /* Sources */,
 				93166E391FCCB918000D861C /* Frameworks */,
 				93166E3A1FCCB918000D861C /* Resources */,
+				4F37BA7381D64604D22A24CD /* [CP] Embed Pods Frameworks */,
+				8363A5AE099EF97574BA849D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,9 +275,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93166E591FCCB918000D861C /* Build configuration list for PBXNativeTarget "HondaHelpTests" */;
 			buildPhases = (
+				365C0D9BAE9ECA670F0FAFBF /* [CP] Check Pods Manifest.lock */,
 				93166E4B1FCCB918000D861C /* Sources */,
 				93166E4C1FCCB918000D861C /* Frameworks */,
 				93166E4D1FCCB918000D861C /* Resources */,
+				714C94632EA7083EF031A8DF /* [CP] Embed Pods Frameworks */,
+				F31BD53C6EA7E577C537D525 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,6 +379,207 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29447CA6D84531A191000C06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaResponder/Pods-HondaResponder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		365C0D9BAE9ECA670F0FAFBF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HondaHelpTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F37BA7381D64604D22A24CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaHelp/Pods-HondaHelp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		714C94632EA7083EF031A8DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaHelpTests/Pods-HondaHelpTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74D0CFB12CBA9378995F5184 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HondaResponder/Pods-HondaResponder-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaResponder/Pods-HondaResponder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8363A5AE099EF97574BA849D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HondaHelp/Pods-HondaHelp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaHelp/Pods-HondaHelp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E70E10C7C8587D04DBB977A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HondaHelp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E961E329CE109508F996B454 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HondaResponderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB110547E98DE7EA6128CAA2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaResponderTests/Pods-HondaResponderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEAF3527B1AC894955346620 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HondaResponder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F31BD53C6EA7E577C537D525 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaHelpTests/Pods-HondaHelpTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3950666DB93A1690F6F09E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HondaResponderTests/Pods-HondaResponderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5EA603421FCCACD90050BAB6 /* Sources */ = {
@@ -515,11 +776,13 @@
 		};
 		5EA603641FCCACDA0050BAB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98307F38C3568E356517BA8D /* Pods-HondaResponder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8EU22292BA;
+				DEVELOPMENT_TEAM = 5GUHK8L5H2;
 				INFOPLIST_FILE = HondaResponder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalscale.HondaResponder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -530,11 +793,13 @@
 		};
 		5EA603651FCCACDA0050BAB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88D49DEC8BBA7840423B57C0 /* Pods-HondaResponder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8EU22292BA;
+				DEVELOPMENT_TEAM = 5GUHK8L5H2;
 				INFOPLIST_FILE = HondaResponder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalscale.HondaResponder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -545,6 +810,7 @@
 		};
 		5EA603671FCCACDA0050BAB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C70FF8A0B3D52A7C660C31C2 /* Pods-HondaResponderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,6 +828,7 @@
 		};
 		5EA603681FCCACDA0050BAB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CBFEADE1BB4CD1F58CA51B5 /* Pods-HondaResponderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -579,11 +846,13 @@
 		};
 		93166E571FCCB918000D861C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB372D6FD8C036D7880F27B2 /* Pods-HondaHelp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8EU22292BA;
+				DEVELOPMENT_TEAM = 5GUHK8L5H2;
 				INFOPLIST_FILE = HondaHelp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalscale.HondaHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -594,11 +863,13 @@
 		};
 		93166E581FCCB918000D861C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B6ED8F4F587A8F886A92AAE /* Pods-HondaHelp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8EU22292BA;
+				DEVELOPMENT_TEAM = 5GUHK8L5H2;
 				INFOPLIST_FILE = HondaHelp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalscale.HondaHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -609,6 +880,7 @@
 		};
 		93166E5A1FCCB918000D861C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5C2B2AB52E74CA9B9CB7A47 /* Pods-HondaHelpTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -626,6 +898,7 @@
 		};
 		93166E5B1FCCB918000D861C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709ADD9172CB03D641844394 /* Pods-HondaHelpTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
