@@ -77,12 +77,12 @@
 		5EA603481FCCACD90050BAB6 /* HondaResponder */ = {
 			isa = PBXGroup;
 			children = (
-				5EA603491FCCACD90050BAB6 /* AppDelegate.swift */,
-				5EA6034B1FCCACD90050BAB6 /* ViewController.swift */,
-				5EA6034D1FCCACDA0050BAB6 /* Main.storyboard */,
+				5EA603551FCCACDA0050BAB6 /* Info.plist */,
 				5EA603501FCCACDA0050BAB6 /* Assets.xcassets */,
 				5EA603521FCCACDA0050BAB6 /* LaunchScreen.storyboard */,
-				5EA603551FCCACDA0050BAB6 /* Info.plist */,
+				5EA6034D1FCCACDA0050BAB6 /* Main.storyboard */,
+				5EA603491FCCACD90050BAB6 /* AppDelegate.swift */,
+				5EA6034B1FCCACD90050BAB6 /* ViewController.swift */,
 			);
 			path = HondaResponder;
 			sourceTree = "<group>";
@@ -90,8 +90,8 @@
 		5EA6035D1FCCACDA0050BAB6 /* HondaResponderTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EA6035E1FCCACDA0050BAB6 /* HondaResponderTests.swift */,
 				5EA603601FCCACDA0050BAB6 /* Info.plist */,
+				5EA6035E1FCCACDA0050BAB6 /* HondaResponderTests.swift */,
 			);
 			path = HondaResponderTests;
 			sourceTree = "<group>";
