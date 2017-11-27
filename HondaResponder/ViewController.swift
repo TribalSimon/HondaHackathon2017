@@ -15,15 +15,9 @@ class ViewController: UIViewController {
         
         didSet {
             
-            mapView.isMyLocationEnabled = true
-            
             mapView.mapType = .normal
             
             mapView.settings.compassButton = true
-            
-            mapView.settings.myLocationButton = true
-            
-            mapView.camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
             
         }
         
