@@ -29,6 +29,14 @@ class ViewController: UIViewController {
     
     @IBOutlet private var overlay: UIView!
     
+    private let socket: SocketIOClient = {
+        
+        let manager = SocketManager(socketURL: URL(string:"https://protected-ocean-43147.herokuapp.com:8080/")!)
+        let defaultNamespaceSocket = manager.defaultSocket
+        return manager.socket(forNamespace: "/hondaHackathon")
+        
+    }()
+    
     private let hotspots: [Hotspot] = [
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0450804, longitude: -118.2265129)),
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0447212, longitude: -118.2256368)),
@@ -56,6 +64,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         eventsViewController.delegate = self
+        
+        socket.connect()
         
     }
 
