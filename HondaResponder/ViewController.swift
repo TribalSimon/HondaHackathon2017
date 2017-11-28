@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     
     @IBOutlet private var leadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet private var overlay: UIView!
+    
     private let hotspots: [Hotspot] = [
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0450804, longitude: -118.2265129)),
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0421624, longitude: -118.2576791)),
@@ -118,11 +120,20 @@ private extension ViewController {
         
         leadingConstraint.constant = -eventsViewController.view.frame.width
         
-        UIView.animate(withDuration: 0.15, animations: { [weak self] in
-            
-            self?.view.layoutIfNeeded()
-            
-        })
+        UIView.animate(
+            withDuration: 0.15,
+            animations: { [weak self] in
+                
+                self?.view.layoutIfNeeded()
+                
+                self?.overlay.backgroundColor = .clear
+                
+            }, completion: { _ in
+                
+                self.overlay.isHidden = true
+                
+            }
+        )
         
     }
     
@@ -134,9 +145,14 @@ private extension ViewController {
         
         leadingConstraint.constant = 0
         
+        overlay.backgroundColor = .clear
+        overlay.isHidden = false
+        
         UIView.animate(withDuration: 0.15, animations: { [weak self] in
             
             self?.view.layoutIfNeeded()
+            
+            self?.overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
             
         })
         
