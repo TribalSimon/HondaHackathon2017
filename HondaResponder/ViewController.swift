@@ -46,9 +46,22 @@ class ViewController: UIViewController {
     }()
     
     private let hotspots: [Hotspot] = [
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.039589, longitude: -118.245151)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.040318, longitude: -118.242125)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.037411, longitude: -118.244990))
+        
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0628, longitude: -118.2731)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0571, longitude: -118.2724)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0468, longitude: -118.2686)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0499, longitude: -118.2590)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0332, longitude: -118.2657)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0295, longitude: -118.2562)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0213, longitude: -118.2617)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0401, longitude: -118.2543)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0482, longitude: -118.2487)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0543, longitude: -118.2391)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0651, longitude: -118.2363)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0402, longitude: -118.2401)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0315, longitude: -118.2458)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0204, longitude: -118.2396))
+        
     ]
     
     private var eventsViewController: EventsViewController {
@@ -89,27 +102,16 @@ class ViewController: UIViewController {
         
         socket.connect()
         
-        NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 3])
-        NotificationCenter.default.addObserver(self,
-            selector: #selector(allCarsDispatched),
-            name: NSNotification.Name("allCarsDispatched"),
-            object: nil
-        )
-        
-    }
-
-    override func viewDidLayoutSubviews() {
-        
-        super.viewDidLayoutSubviews()
-        
         let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 50, height: 50)))
         markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
-        markerImageTemplateView.backgroundColor = .orange
+        markerImageTemplateView.backgroundColor = UIColor(red: 1, green: 0.5, blue: 0, alpha: 0.4)
         
         let markerImage = UIImage(view: markerImageTemplateView)
         
         mapView.clear()
-        mapView.camera = GMSCameraPosition.camera(withLatitude: 34.0391623, longitude: -118.2435846, zoom: 18.0)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: 34.043114, longitude: -118.244357, zoom: 14.0)
+        
+//        displayAccident(at: CLLocationCoordinate2D(latitude: 34.043114, longitude: -118.244357))
         
         for hotspot in hotspots {
             
@@ -121,6 +123,13 @@ class ViewController: UIViewController {
             marker.map = mapView
             
         }
+        
+        NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 5])
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(allCarsDispatched),
+            name: NSNotification.Name("allCarsDispatched"),
+            object: nil
+        )
         
     }
     
