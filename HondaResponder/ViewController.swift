@@ -62,6 +62,12 @@ class ViewController: UIViewController {
         
         super.viewDidLayoutSubviews()
         
+        let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 50, height: 50)))
+        markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
+        markerImageTemplateView.backgroundColor = .orange
+        
+        let markerImage = UIImage(view: markerImageTemplateView)
+        
         mapView.clear()
         mapView.surround(hotspots)
         
@@ -69,6 +75,7 @@ class ViewController: UIViewController {
             
             let marker = GMSMarker()
             marker.position = hotspot.coordinate
+            marker.icon = markerImage
             marker.map = mapView
             
         }
@@ -107,7 +114,7 @@ extension GMSMapView {
         
         camera = camera(
             for: GMSCoordinateBounds(coordinate: southwestMostCoordinate, coordinate: northeastMostCoordinate),
-            insets: UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
+            insets: UIEdgeInsets(top: 80, left: 80, bottom: 80, right: 80)
         )!
         
     }
@@ -189,6 +196,24 @@ struct Hotspot {
     init(coordinate: CLLocationCoordinate2D) {
         
         self.coordinate = coordinate
+        
+    }
+    
+}
+
+extension UIImage {
+    
+    convenience init(view: UIView) {
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        
+        view.layer.render(in:UIGraphicsGetCurrentContext()!)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: image!.cgImage!)
         
     }
     
