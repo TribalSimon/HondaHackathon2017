@@ -195,6 +195,22 @@ extension ViewController: GMSMapViewDelegate {
         marker.icon = markerImage
         marker.map = mapView
         
+        let vehicleAssignmentJSON: [String: Any] = ["carID": 1, "latitude": coordinate.latitude, "longitude": coordinate.longitude]
+        
+        socket.emitTest(event: "vehicleAssignment", vehicleAssignmentJSON)
+        
+    }
+    
+    func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
+        
+        let vehicleAssignmentJSON: [String: Any] = [
+            "carID": 1,
+            "latitude": marker.position.latitude,
+            "longitude": marker.position.longitude
+        ]
+        
+        socket.emitTest(event: "vehicleAssignment", vehicleAssignmentJSON)
+        
     }
     
 }
