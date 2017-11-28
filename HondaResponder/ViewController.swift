@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     private lazy var socketManager: SocketManager = {
         
-        return SocketManager(socketURL: URL(string:"https://protected-ocean-43147.herokuapp.com:8080")!, config: [.log(true), .compress])
+        return SocketManager(socketURL: URL(string:"https://protected-ocean-43147.herokuapp.com")!, config: [.log(true), .compress])
         
     }()
     
