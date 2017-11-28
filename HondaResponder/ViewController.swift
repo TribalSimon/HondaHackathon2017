@@ -215,7 +215,7 @@ extension ViewController: GMSMapViewDelegate {
         markerImageTemplateView.backgroundColor = UIColor(red: 60 / 255, green: 155 / 255, blue: 215 / 255, alpha: 0.4)
         
         let car = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 35, height: 35)))
-        car.image = #imageLiteral(resourceName: "car")
+        car.image = #imageLiteral(resourceName: "theOtherCar")
         car.center = markerImageTemplateView.center
         
         markerImageTemplateView.addSubview(car)

@@ -18,7 +18,7 @@ class DispatchVehiclesViewController: UIViewController {
     
     private let carWidthAndHeight: CGFloat = 35
     
-    private var cars: [UIView] = []
+    private var cars: [UIButton] = []
     
     override func viewDidLoad() {
         
@@ -98,7 +98,7 @@ extension DispatchVehiclesViewController {
         }
         
         let car = cars[numberOfCarsDispatched - 1]
-        car.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        car.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         
     }
     
@@ -118,8 +118,9 @@ extension DispatchVehiclesViewController {
         
         for _ in 0..<numberOfCars {
             
-            let car = UIView(frame: CGRect(origin: .zero, size: CGSize(width: carWidthAndHeight, height: carWidthAndHeight)))
-            car.backgroundColor = .black
+            let car = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: carWidthAndHeight, height: carWidthAndHeight)))
+            car.setImage(#imageLiteral(resourceName: "car"), for: .normal)
+            car.tintColor = .black
             
             view.addSubview(car)
             
