@@ -7,8 +7,9 @@
 //
 
 import CoreLocation
-import UIKit
 import GoogleMaps
+import MapKit
+import UIKit
 
 class ViewController: UIViewController {
     
@@ -208,6 +209,39 @@ extension ViewController: CLLocationManagerDelegate {
 
             locationManager.stopUpdatingLocation()
         }
+        
+    }
+    
+}
+
+// MARK: - GMSMapViewDelegate
+
+extension ViewController: GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        let alertController = UIAlertController(title: "", message: "Do you want to navigate to your assist zone?", preferredStyle: .alert)
+        
+        let navigateAction =  UIAlertAction(title: "YES", style: .default, handler: { (alert: UIAlertAction!) in
+            
+            let placeMark = MKPlacemark(coordinate: marker.position)
+            
+            let directionsRequest = MKDirectionsRequest()
+            directionsRequest.destination = MKMapItem(placemark: placeMark)
+            directionsRequest.transportType = .automobile
+            
+            MKMapItem.openMaps(with: [directionsRequest.destination!], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+            
+        })
+        
+        let cancelAction =  UIAlertAction(title: "NO", style: .cancel, handler: nil)
+        
+        alertController.addAction(navigateAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        return true
         
     }
     
