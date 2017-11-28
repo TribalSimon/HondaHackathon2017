@@ -175,8 +175,7 @@ extension ViewController: GMSMapViewDelegate {
         
         let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 175, height: 175)))
         markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
-        markerImageTemplateView.backgroundColor = .blue
-        
+        markerImageTemplateView.backgroundColor = UIColor(red: 60 / 255, green: 155 / 255, blue: 215 / 255, alpha: 0.4)
         let markerImage = UIImage(view: markerImageTemplateView)
         
         let marker = GMSMarker()
