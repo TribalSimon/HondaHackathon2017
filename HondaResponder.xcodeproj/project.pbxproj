@@ -58,6 +58,7 @@
 		5E76869A1FCD3E4900E87DA5 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76866B1FCD3E4900E87DA5 /* SocketAckEmitter.swift */; };
 		5E76869B1FCD3E4900E87DA5 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76866B1FCD3E4900E87DA5 /* SocketAckEmitter.swift */; };
 		5E4619B81FCCE68800F84E67 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4619B61FCCE68800F84E67 /* EventsViewController.swift */; };
+		5E4619BB1FCD07C100F84E67 /* DispatchVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4619BA1FCD07C100F84E67 /* DispatchVehiclesViewController.swift */; };
 		5EA6034A1FCCACD90050BAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA603491FCCACD90050BAB6 /* AppDelegate.swift */; };
 		5EA6034C1FCCACD90050BAB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6034B1FCCACD90050BAB6 /* ViewController.swift */; };
 		5EA6034F1FCCACDA0050BAB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA6034D1FCCACDA0050BAB6 /* Main.storyboard */; };
@@ -153,6 +154,7 @@
 		5E76866A1FCD3E4900E87DA5 /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
 		5E76866B1FCD3E4900E87DA5 /* SocketAckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckEmitter.swift; sourceTree = "<group>"; };
 		5E4619B61FCCE68800F84E67 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		5E4619BA1FCD07C100F84E67 /* DispatchVehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchVehiclesViewController.swift; sourceTree = "<group>"; };
 		5EA603461FCCACD90050BAB6 /* HondaResponder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HondaResponder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA603491FCCACD90050BAB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EA6034B1FCCACD90050BAB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				5EA603491FCCACD90050BAB6 /* AppDelegate.swift */,
 				5EA6034B1FCCACD90050BAB6 /* ViewController.swift */,
 				5E4619B61FCCE68800F84E67 /* EventsViewController.swift */,
+				5E4619BA1FCD07C100F84E67 /* DispatchVehiclesViewController.swift */,
 			);
 			path = HondaResponder;
 			sourceTree = "<group>";
@@ -950,6 +953,7 @@
 				5E76869A1FCD3E4900E87DA5 /* SocketAckEmitter.swift in Sources */,
 				5E76867C1FCD3E4900E87DA5 /* SocketManager.swift in Sources */,
 				5EA6034C1FCCACD90050BAB6 /* ViewController.swift in Sources */,
+				5E4619BB1FCD07C100F84E67 /* DispatchVehiclesViewController.swift in Sources */,
 				5E76866E1FCD3E4900E87DA5 /* SocketLogger.swift in Sources */,
 				5E7686981FCD3E4900E87DA5 /* SocketAckManager.swift in Sources */,
 				5E7686741FCD3E4900E87DA5 /* SocketTypes.swift in Sources */,
