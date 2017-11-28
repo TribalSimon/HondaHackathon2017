@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "car_icon.png",
+      "filename" : "car_icon_inac.png",
       "scale" : "1x"
     },
     {

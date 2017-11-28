@@ -71,7 +71,6 @@
 		93166E461FCCB918000D861C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93166E451FCCB918000D861C /* Assets.xcassets */; };
 		93166E491FCCB918000D861C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93166E471FCCB918000D861C /* LaunchScreen.storyboard */; };
 		93166E541FCCB918000D861C /* HondaHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93166E531FCCB918000D861C /* HondaHelpTests.swift */; };
-		93166E5D1FCCC3A4000D861C /* CrashNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93166E5C1FCCC3A4000D861C /* CrashNotification.swift */; };
 		93166E681FCD033D000D861C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93166E671FCD033D000D861C /* AppDelegate.swift */; };
 		93166E6A1FCD033D000D861C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93166E691FCD033D000D861C /* ViewController.swift */; };
 		93166E6D1FCD033D000D861C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93166E6B1FCD033D000D861C /* Main.storyboard */; };
@@ -176,7 +175,6 @@
 		93166E4F1FCCB918000D861C /* HondaHelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HondaHelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93166E531FCCB918000D861C /* HondaHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HondaHelpTests.swift; sourceTree = "<group>"; };
 		93166E551FCCB918000D861C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93166E5C1FCCC3A4000D861C /* CrashNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashNotification.swift; sourceTree = "<group>"; };
 		93166E651FCD033D000D861C /* ResponseUnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResponseUnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93166E671FCD033D000D861C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93166E691FCD033D000D861C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -402,7 +400,6 @@
 				93166E3E1FCCB918000D861C /* AppDelegate.swift */,
 				93166E401FCCB918000D861C /* ViewController.swift */,
 				93166E421FCCB918000D861C /* Main.storyboard */,
-				93166E5C1FCCC3A4000D861C /* CrashNotification.swift */,
 				93166E451FCCB918000D861C /* Assets.xcassets */,
 				93166E471FCCB918000D861C /* LaunchScreen.storyboard */,
 				93166E4A1FCCB918000D861C /* Info.plist */,
@@ -1001,7 +998,6 @@
 				5E76868F1FCD3E4900E87DA5 /* SocketIOClient.swift in Sources */,
 				5E76867D1FCD3E4900E87DA5 /* SocketManager.swift in Sources */,
 				5E7686951FCD3E4900E87DA5 /* SocketIOClientSpec.swift in Sources */,
-				93166E5D1FCCC3A4000D861C /* CrashNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

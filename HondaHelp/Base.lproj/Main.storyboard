@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kefa.ttf">
+            <string>Kefa-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HondaHelp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honda Helper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efI-qb-GFH">
+                                <rect key="frame" x="0.0" y="193" width="375" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="LNz-iv-JAT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honda" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-Pd-PJb">
+                                <rect key="frame" x="67" y="45" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4Oy-I7-7CG"/>
+                                    <constraint firstAttribute="height" constant="128" id="AA2-hE-Zk9"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-9f-TON">
+                                <rect key="frame" x="164" y="389" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="anh-Py-5Na"/>
+                                    <constraint firstAttribute="width" constant="46" id="mpE-dA-9sd"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="mic"/>
+                                <connections>
+                                    <action selector="micButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nQe-vS-LMh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by LAssist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ve-ul-Af3">
+                                <rect key="frame" x="0.0" y="640" width="375" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App_icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="8J4-M8-LqY">
+                                <rect key="frame" x="157.5" y="572" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="h0r-Do-cY8"/>
+                                    <constraint firstAttribute="width" constant="60" id="tr1-wJ-1ES"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-Mi-WeB">
+                                <rect key="frame" x="95.5" y="555" width="184" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="cXK-R0-QvH"/>
+                                    <constraint firstAttribute="height" constant="112" id="zji-PD-dZ0"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="hiddenCrashButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z5a-c1-BH8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2666666667" green="0.46274509800000002" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="efI-qb-GFH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2OJ-hp-PLN"/>
+                            <constraint firstItem="8h4-Mi-WeB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3Gp-Pt-xIu"/>
+                            <constraint firstItem="8J4-M8-LqY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BIX-RY-zwf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Ve-ul-Af3" secondAttribute="bottom" constant="10" id="CWT-GR-0IG"/>
+                            <constraint firstItem="4Ve-ul-Af3" firstAttribute="top" secondItem="8J4-M8-LqY" secondAttribute="bottom" constant="8" id="Dhk-xm-IoK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="efI-qb-GFH" secondAttribute="trailing" id="Plr-sN-b3V"/>
+                            <constraint firstItem="0dS-9f-TON" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.2" id="cUY-O2-xyv"/>
+                            <constraint firstItem="efI-qb-GFH" firstAttribute="top" secondItem="zmb-Pd-PJb" secondAttribute="bottom" constant="20" id="e4X-DA-YIF"/>
+                            <constraint firstItem="efI-qb-GFH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i2n-pZ-v06"/>
+                            <constraint firstItem="4Ve-ul-Af3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="luA-Ow-BSv"/>
+                            <constraint firstItem="0dS-9f-TON" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="n6f-vT-aHY"/>
+                            <constraint firstItem="zmb-Pd-PJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="rPY-4j-fkW"/>
+                            <constraint firstItem="8h4-Mi-WeB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="so9-8O-7q6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ve-ul-Af3" secondAttribute="trailing" id="tCj-K6-jP3"/>
+                            <constraint firstItem="zmb-Pd-PJb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vPA-tP-3v6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="App_icon-2" width="512" height="512"/>
+        <image name="honda" width="1281" height="1041"/>
+        <image name="mic" width="512" height="512"/>
+    </resources>
 </document>
