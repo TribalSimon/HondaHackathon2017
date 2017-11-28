@@ -173,4 +173,12 @@ extension DispatchVehiclesViewController {
         
     }
     
+    @IBAction private func clearTapped() {
+        
+        numberOfCarsDispatched = 0
+        
+        NotificationCenter.default.post(name: NSNotification.Name("clear"), object: nil)
+        
+    }
+    
 }

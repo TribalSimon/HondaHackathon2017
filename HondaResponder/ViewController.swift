@@ -17,7 +17,6 @@ class ViewController: UIViewController {
             
             mapView.mapType = .normal
             mapView.settings.compassButton = true
-            mapView.settings.zoomGestures = false
             mapView.settings.rotateGestures = false
             mapView.delegate = self
             
@@ -33,6 +32,24 @@ class ViewController: UIViewController {
     
     private var shouldDispatchCar = true
     
+    private var dispatchedCarMarkers: [GMSGroundOverlay] = []
+    
+    @objc private func clearTapped() {
+        
+        for marker in dispatchedCarMarkers {
+            
+            marker.map = nil
+            
+        }
+        
+        dispatchedCarMarkers.removeAll()
+        
+        shouldDispatchCar = true
+        
+        NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 5])
+        
+    }
+    
     private lazy var socket: SocketIOClient = {
         
         return socketManager.defaultSocket
@@ -44,25 +61,6 @@ class ViewController: UIViewController {
         return SocketManager(socketURL: URL(string:"https://protected-ocean-43147.herokuapp.com")!, config: [.log(true), .compress])
         
     }()
-    
-    private let hotspots: [Hotspot] = [
-        
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0628, longitude: -118.2731)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0571, longitude: -118.2724)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0468, longitude: -118.2686)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0499, longitude: -118.2590)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0332, longitude: -118.2657)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0295, longitude: -118.2562)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0213, longitude: -118.2617)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0401, longitude: -118.2543)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0482, longitude: -118.2487)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0543, longitude: -118.2391)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0651, longitude: -118.2363)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0402, longitude: -118.2401)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0315, longitude: -118.2458)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0204, longitude: -118.2396))
-        
-    ]
     
     private var eventsViewController: EventsViewController {
         
@@ -89,18 +87,28 @@ class ViewController: UIViewController {
         let markerImage = UIImage(view: markerImageTemplateView)
         
         mapView.clear()
-        mapView.camera = GMSCameraPosition.camera(withLatitude: 34.043114, longitude: -118.244357, zoom: 14.0)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: 34.043114, longitude: -118.244357, zoom: 14)
         
-//        displayAccident(at: CLLocationCoordinate2D(latitude: 34.043114, longitude: -118.244357))
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) { [weak self] in
+//
+//            self?.mapView.animate(toZoom: 18)
+//
+//        }
         
         for hotspot in hotspots {
             
-            let marker = GMSMarker()
-            marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
-            marker.position = hotspot.coordinate
-            marker.icon = markerImage
-            marker.isTappable = false
-            marker.map = mapView
+            let markerOverlay = GMSGroundOverlay(position: hotspot.coordinate, icon: markerImage, zoomLevel: 14)
+            markerOverlay.anchor = CGPoint(x: 0.5, y: 0.5)
+            markerOverlay.isTappable = false
+            markerOverlay.map = mapView
+            
+
+//            let marker = GMSMarker()
+//            marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+//            marker.position = hotspot.coordinate
+//            marker.icon = markerImage
+//            marker.isTappable = false
+//            marker.map = mapView
             
         }
         
@@ -128,13 +136,20 @@ class ViewController: UIViewController {
         
         socket.connect()
         
-        display(hotspots)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: 34.043114, longitude: -118.244357, zoom: 14.0)
+        
+//        displayAccident(at: CLLocationCoordinate2D(latitude: 34.043114, longitude: -118.244357))
         
         NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 5])
         NotificationCenter.default.addObserver(self,
             selector: #selector(allCarsDispatched),
             name: NSNotification.Name("allCarsDispatched"),
             object: nil
+        )
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(clearTapped),
+                                               name: NSNotification.Name("clear"),
+                                               object: nil
         )
         
     }
@@ -260,7 +275,7 @@ extension ViewController: GMSMapViewDelegate {
         
         NotificationCenter.default.post(name: NSNotification.Name("carDispatched"), object: nil)
         
-        let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 175, height: 175)))
+        let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 600)))
         markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
         markerImageTemplateView.backgroundColor = UIColor(red: 60 / 255, green: 155 / 255, blue: 215 / 255, alpha: 0.4)
         
@@ -272,12 +287,18 @@ extension ViewController: GMSMapViewDelegate {
         
         let markerImage = UIImage(view: markerImageTemplateView)
         
-        let marker = GMSMarker()
-        marker.position = coordinate
-        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
-        marker.isDraggable = true
-        marker.icon = markerImage
-        marker.map = mapView
+        let markerOverlay = GMSGroundOverlay(position: coordinate, icon: markerImage, zoomLevel: 18)
+        markerOverlay.anchor = CGPoint(x: 0.5, y: 0.5)
+        markerOverlay.map = mapView
+        
+        dispatchedCarMarkers.append(markerOverlay)
+        
+//        let marker = GMSMarker()
+//        marker.position = coordinate
+//        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+//        marker.isDraggable = true
+//        marker.icon = markerImage
+//        marker.map = mapView
         
         let vehicleAssignmentJSON: [String: Any] = ["carID": 1, "latitude": coordinate.latitude, "longitude": coordinate.longitude]
         
@@ -355,6 +376,16 @@ extension ViewController: GMSMapViewDelegate {
 extension ViewController: EventsViewControllerDelegate {
     
     func closeTappedInEventsViewController(_ eventsViewController: EventsViewController) {
+        
+        closeMenu()
+        
+    }
+    
+    func eventsViewController(_ eventsViewController: EventsViewController, hotspotsRetrieved hotspots: [Hotspot]) {
+        
+        display(hotspots)
+        
+        NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 5])
         
         closeMenu()
         
