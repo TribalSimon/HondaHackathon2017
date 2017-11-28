@@ -29,11 +29,15 @@ class ViewController: UIViewController {
     
     @IBOutlet private var overlay: UIView!
     
-    private let socket: SocketIOClient = {
+    private lazy var socket: SocketIOClient = {
         
-        let manager = SocketManager(socketURL: URL(string:"https://protected-ocean-43147.herokuapp.com:8080/")!)
-        let defaultNamespaceSocket = manager.defaultSocket
-        return manager.socket(forNamespace: "/hondaHackathon")
+        return socketManager.defaultSocket
+        
+    }()
+    
+    private lazy var socketManager: SocketManager = {
+        
+        return SocketManager(socketURL: URL(string:"https://protected-ocean-43147.herokuapp.com:8080")!, config: [.log(true), .compress])
         
     }()
     
@@ -197,7 +201,7 @@ extension ViewController: GMSMapViewDelegate {
         
         let vehicleAssignmentJSON: [String: Any] = ["carID": 1, "latitude": coordinate.latitude, "longitude": coordinate.longitude]
         
-        socket.emitTest(event: "vehicleAssignment", vehicleAssignmentJSON)
+        socket.emit("vehicleAssignment", with: [vehicleAssignmentJSON])
         
     }
     
@@ -209,7 +213,7 @@ extension ViewController: GMSMapViewDelegate {
             "longitude": marker.position.longitude
         ]
         
-        socket.emitTest(event: "vehicleAssignment", vehicleAssignmentJSON)
+        socket.emit("vehicleAssignment", with: [vehicleAssignmentJSON])
         
     }
     
