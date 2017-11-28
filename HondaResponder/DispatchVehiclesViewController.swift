@@ -12,22 +12,20 @@ class DispatchVehiclesViewController: UIViewController {
     
     @IBOutlet private weak var autoButton: UIButton!
     
-    private let car: UIView = {
-        
-        let car = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 35, height: 35)))
-        car.backgroundColor = .black
-        
-        return car
-        
-    }()
+    private var numberOfCarsDispatched = 0
+    
+    private var numberOfCars = 0
+    
+    private let carWidthAndHeight: CGFloat = 35
+    
+    private var cars: [UIView] = []
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        view.addSubview(car)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(carDispatched), name: NSNotification.Name("carDispatched"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadCars(_:)), name: NSNotification.Name("loadCars"), object: nil)
         
     }
     
@@ -35,10 +33,43 @@ class DispatchVehiclesViewController: UIViewController {
         
         super.viewWillLayoutSubviews()
         
-        let originX = (autoButton.frame.minX + 24) / 2 - car.frame.width / 2
-        let originY = view.frame.height / 2 - car.frame.height / 2
+        let originY = view.frame.height / 2 - carWidthAndHeight / 2
         
-        car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
+        if numberOfCars == 1 {
+            
+            let car = cars.first!
+            
+            let originX = (autoButton.frame.minX + 24) / 2 - car.frame.width / 2
+            
+            car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
+            
+        } else {
+            
+            let leadingPadding: CGFloat = 24
+            
+            let trailingPadding: CGFloat = 24
+            
+            let totalSpaceToWorkWith: CGFloat = autoButton.frame.minX - trailingPadding - carWidthAndHeight - leadingPadding
+            
+            let totalWidthOfCars: CGFloat = carWidthAndHeight * CGFloat(numberOfCars)
+            
+            let numberOfGapsInBetweenCars = numberOfCars - 1
+            
+            let totalSpacingAvailableForGaps: CGFloat = totalSpaceToWorkWith - totalWidthOfCars
+            
+            let spacingInBetweenEachCar = totalSpacingAvailableForGaps / CGFloat(numberOfGapsInBetweenCars)
+            
+            var originX = leadingPadding
+            
+            for car in cars {
+                
+                car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
+                
+                originX = originX + spacingInBetweenEachCar
+                
+            }
+            
+        }
         
     }
     
@@ -48,7 +79,87 @@ extension DispatchVehiclesViewController {
     
     @objc private func carDispatched() {
         
+        guard numberOfCarsDispatched < numberOfCars else {
+            
+            return
+            
+        }
+        
+        numberOfCarsDispatched += 1
+        
+        if numberOfCarsDispatched == numberOfCars {
+            
+            NotificationCenter.default.post(name: NSNotification.Name("allCarsDispatched"), object: nil)
+            
+        }
+        
+        let car = cars[numberOfCarsDispatched - 1]
         car.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        
+    }
+    
+    @objc private func loadCars(_ notification: Notification) {
+        
+        numberOfCarsDispatched = 0
+        
+        numberOfCars = notification.userInfo?["numberOfCars"] as! Int
+        
+        for car in cars {
+            
+            car.removeFromSuperview()
+            
+        }
+        
+        cars.removeAll()
+        
+        for _ in 0..<numberOfCars {
+            
+            let car = UIView(frame: CGRect(origin: .zero, size: CGSize(width: carWidthAndHeight, height: carWidthAndHeight)))
+            car.backgroundColor = .black
+            
+            view.addSubview(car)
+            
+            cars.append(car)
+            
+        }
+        
+        let originY = view.frame.height / 2 - carWidthAndHeight / 2
+        
+        if numberOfCars == 1 {
+            
+            let car = cars.first!
+            
+            let originX = (autoButton.frame.minX + 24) / 2 - car.frame.width / 2
+            
+            car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
+            
+        } else {
+            
+            let leadingPadding: CGFloat = 24
+            
+            let trailingPadding: CGFloat = 24
+            
+            let totalSpaceToWorkWith: CGFloat = autoButton.frame.minX - trailingPadding - carWidthAndHeight - leadingPadding
+            
+            let totalWidthOfCars: CGFloat = carWidthAndHeight * CGFloat(numberOfCars)
+            
+            let numberOfGapsInBetweenCars = numberOfCars - 1
+            
+            let totalSpacingAvailableForGaps: CGFloat = totalSpaceToWorkWith - totalWidthOfCars
+            
+            let spacingInBetweenEachCar = totalSpacingAvailableForGaps / CGFloat(numberOfGapsInBetweenCars)
+            
+            var originX = leadingPadding
+            
+            for car in cars {
+                
+                car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
+                
+                originX = originX + spacingInBetweenEachCar
+                
+            }
+            
+        }
         
     }
     

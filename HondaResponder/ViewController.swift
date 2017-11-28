@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     @IBOutlet private var overlay: UIView!
     
+    private var shouldDispatchCar = true
+    
     private lazy var socket: SocketIOClient = {
         
         return socketManager.defaultSocket
@@ -70,6 +72,13 @@ class ViewController: UIViewController {
         eventsViewController.delegate = self
         
         socket.connect()
+        
+        NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 5])
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(allCarsDispatched),
+            name: NSNotification.Name("allCarsDispatched"),
+            object: nil
+        )
         
     }
 
@@ -160,6 +169,12 @@ private extension ViewController {
         
     }
     
+    @objc private func allCarsDispatched() {
+        
+        shouldDispatchCar = false
+        
+    }
+    
 }
 
 private extension ViewController {
@@ -186,6 +201,12 @@ private extension ViewController {
 extension ViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        
+        guard shouldDispatchCar else {
+            
+            return
+            
+        }
         
         NotificationCenter.default.post(name: NSNotification.Name("carDispatched"), object: nil)
         
