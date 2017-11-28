@@ -73,7 +73,7 @@ class ViewController: UIViewController {
         
         socket.connect()
         
-        NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 5])
+        NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 3])
         NotificationCenter.default.addObserver(self,
             selector: #selector(allCarsDispatched),
             name: NSNotification.Name("allCarsDispatched"),

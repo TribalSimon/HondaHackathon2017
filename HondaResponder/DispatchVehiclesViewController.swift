@@ -45,9 +45,13 @@ class DispatchVehiclesViewController: UIViewController {
             
         } else {
             
-            let leadingPadding: CGFloat = 40
+//            let leadingPadding: CGFloat = 40
+//
+//            let trailingPadding: CGFloat = 56
             
-            let trailingPadding: CGFloat = 56
+            let leadingPadding: CGFloat = 100
+            
+            let trailingPadding: CGFloat = 100
             
             let totalSpaceToWorkWith: CGFloat = clearButton.frame.minX - trailingPadding - leadingPadding
             
@@ -135,9 +139,13 @@ extension DispatchVehiclesViewController {
             
         } else {
             
-            let leadingPadding: CGFloat = 40
+//            let leadingPadding: CGFloat = 40
+//
+//            let trailingPadding: CGFloat = 56
             
-            let trailingPadding: CGFloat = 56
+            let leadingPadding: CGFloat = 100
+            
+            let trailingPadding: CGFloat = 100
             
             let totalSpaceToWorkWith: CGFloat = clearButton.frame.minX - trailingPadding - leadingPadding
             
