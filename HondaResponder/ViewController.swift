@@ -22,18 +22,19 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    private let hotspots: [Hotspot] = [
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0450804, longitude: -118.2265129)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0421624, longitude: -118.2576791)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0211174, longitude: -118.2067797)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 33.9938161, longitude: -118.2610674))
+    ]
 
-    override func viewDidLoad() {
+    override func viewDidLayoutSubviews() {
         
-        super.viewDidLoad()
+        super.viewDidLayoutSubviews()
         
-        let hotspots: [Hotspot] = [
-            Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0450804, longitude: -118.2265129)),
-            Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0421624, longitude: -118.2576791)),
-            Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0211174, longitude: -118.2067797)),
-            Hotspot(coordinate: CLLocationCoordinate2D(latitude: 33.9938161, longitude: -118.2610674))
-        ]
-        
+        mapView.clear()
         mapView.surround(hotspots)
         
         for hotspot in hotspots {
@@ -78,7 +79,7 @@ extension GMSMapView {
         
         camera = camera(
             for: GMSCoordinateBounds(coordinate: southwestMostCoordinate, coordinate: northeastMostCoordinate),
-            insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            insets: UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
         )!
         
     }
