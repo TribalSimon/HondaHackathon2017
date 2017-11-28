@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     private func sendCrashNotification() {
         
-        let crashJSON: [String: Any] = ["latitude": 34.047102, "longitude": -118.235147]
+        let crashJSON: [String: Any] = ["latitude": 34.0651, "longitude": -118.2363]
         
         socket.emit("accidentReport", with: [crashJSON])
         
