@@ -80,27 +80,7 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        eventsViewController.delegate = self
-        
-        socket.on("newAccident", callback: { [weak self] data, _ in
-            
-            if let newAccidentObject = data.first as? [String: Any],
-                let latitude = newAccidentObject["latitude"] as? CLLocationDegrees,
-                let longitude = newAccidentObject["longitude"] as? CLLocationDegrees {
-                
-                let accidentLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                
-                self?.displayAccident(at: accidentLocation)
-                
-            }
-            
-        })
-        
-        socket.connect()
+    private func display(_ hotspots: [Hotspot]) {
         
         let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 50, height: 50)))
         markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
@@ -123,6 +103,32 @@ class ViewController: UIViewController {
             marker.map = mapView
             
         }
+        
+    }
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        eventsViewController.delegate = self
+        
+        socket.on("newAccident", callback: { [weak self] data, _ in
+            
+            if let newAccidentObject = data.first as? [String: Any],
+                let latitude = newAccidentObject["latitude"] as? CLLocationDegrees,
+                let longitude = newAccidentObject["longitude"] as? CLLocationDegrees {
+                
+                let accidentLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                
+                self?.displayAccident(at: accidentLocation)
+                
+            }
+            
+        })
+        
+        socket.connect()
+        
+        display(hotspots)
         
         NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 5])
         NotificationCenter.default.addObserver(self,
