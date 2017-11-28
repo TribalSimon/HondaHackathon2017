@@ -23,27 +23,23 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6Z-6y-uJr">
-                                <rect key="frame" x="10" y="612" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.2666666667" green="0.46274509800000002" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="10" y="587" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="CCf-tZ-8rq"/>
-                                    <constraint firstAttribute="height" constant="45" id="L65-N3-Lzn"/>
+                                    <constraint firstAttribute="height" constant="70" id="L65-N3-Lzn"/>
                                 </constraints>
-                                <state key="normal" title="Zone"/>
+                                <state key="normal" backgroundImage="nav_ac"/>
                                 <connections>
                                     <action selector="showCurrentAssistZone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7Y-yi-145"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cke-uk-HXC">
-                                <rect key="frame" x="295" y="612" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.98431372549999996" green="0.43137254899999999" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cke-uk-HXC">
+                                <rect key="frame" x="295" y="587" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="8OP-Ii-mco"/>
-                                    <constraint firstAttribute="height" constant="45" id="WC9-NW-VAS"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Zt0-oX-Tnb"/>
+                                    <constraint firstAttribute="height" constant="70" id="WC9-NW-VAS"/>
                                     <constraint firstAttribute="width" constant="70" id="o7n-W1-142"/>
                                 </constraints>
-                                <state key="normal" title="Event"/>
+                                <state key="normal" backgroundImage="help_ac"/>
                                 <connections>
                                     <action selector="showActiveIncidents:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oxt-zu-31D"/>
                                 </connections>
@@ -51,12 +47,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D6Z-6y-uJr" secondAttribute="bottom" constant="10" id="9HY-gx-1lX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cke-uk-HXC" secondAttribute="trailing" constant="10" id="GB3-1j-o60"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cke-uk-HXC" secondAttribute="bottom" constant="10" id="GKP-cE-IBd"/>
-                            <constraint firstItem="D6Z-6y-uJr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="IV4-ez-Nk9"/>
+                            <constraint firstAttribute="bottom" secondItem="cke-uk-HXC" secondAttribute="bottom" constant="10" id="91Y-LU-rt5"/>
+                            <constraint firstAttribute="bottom" secondItem="D6Z-6y-uJr" secondAttribute="bottom" constant="10" id="9HY-gx-1lX"/>
+                            <constraint firstItem="D6Z-6y-uJr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="IV4-ez-Nk9"/>
                             <constraint firstItem="aOq-mi-VNS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kqs-Ny-JjC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aOq-mi-VNS" secondAttribute="bottom" id="aRq-jN-THP"/>
+                            <constraint firstAttribute="trailing" secondItem="cke-uk-HXC" secondAttribute="trailing" constant="10" id="fQu-SY-5Md"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aOq-mi-VNS" secondAttribute="trailing" id="iqE-Jh-APY"/>
                             <constraint firstItem="aOq-mi-VNS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zkp-BI-lIc"/>
                         </constraints>
@@ -72,4 +68,8 @@
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="help_ac" width="550" height="550"/>
+        <image name="nav_ac" width="550" height="550"/>
+    </resources>
 </document>

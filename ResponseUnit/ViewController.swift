@@ -36,27 +36,21 @@ class ViewController: UIViewController {
     
     private let mapZoomLevel = Float(18)
     
+    private let kLatitude = 34.043114
+    
+    private let kLongitude = -118.244357
+    
     // MARK: - UIView
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        mapView.camera = GMSCameraPosition.camera(withLatitude: 34.0403207, longitude: -118.2717511, zoom: mapZoomLevel)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: kLatitude, longitude: kLongitude, zoom: mapZoomLevel)
         
         locationManager.delegate = self as CLLocationManagerDelegate
         locationManager.requestWhenInUseAuthorization()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(recievedNewIncident),
-            name: NSNotification.Name("NewIncidentNotification"),
-            object: nil
-        )
  
-        // TODO: Remove me when incident is hooked up
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.sendNewIncidentNotification), userInfo: nil, repeats: false)
-        
         socket.on(clientEvent: .connect) {data, ack in
             print("socket connected")
         }
@@ -69,31 +63,29 @@ class ViewController: UIViewController {
             
             guard let vehicleAssignment = data[0] as? [String: Any] else { return }
             
-            let newAssistZone: AssistZone = AssistZone(latitude: vehicleAssignment["latitude"] as! Double, longitude:vehicleAssignment["longitude"] as! Double )
+            let newAssistZone: AssistZone = AssistZone(latitude: vehicleAssignment["latitude"] as! CLLocationDegrees, longitude:vehicleAssignment["longitude"] as! CLLocationDegrees )
             
-            self.mapView.clear()
-            
-            self.updateMapViewWith(newAssistZone)
+            self.recieved(newAssistZone)
         }
         
-        socket.on("newIncident") {data, ack in
+        socket.on("newVehicleAccident") { [weak self] data, ack in
+            
+            guard let `self` = self else {
+                return
+            }
             
             guard let newIncident = data[0] as? [String: Any] else { return }
             
-            let incident: Incident = Incident(latitude: newIncident["latitude"] as! Double, longitude: newIncident["longitude"] as! Double )
-
+            let incident: Incident = Incident(latitude: newIncident["latitude"] as! CLLocationDegrees, longitude: newIncident["longitude"] as! CLLocationDegrees)
+            
+            self.incidents.removeAll()
+            self.incidents.append(incident)
+            
+            self.recieved(incident)
+            
         }
         
         socket.connect()
-        
-    }
-    
-    // FIXME: Temporary until I get real call from server
-    @objc private func sendNewIncidentNotification() {
-        
-        let newIncident = Incident(latitude: 34.040667, longitude: -118.268093)
-        
-        NotificationCenter.default.post(name: NSNotification.Name("NewIncidentNotification"), object: nil, userInfo: ["incident" : newIncident])
         
     }
 
@@ -103,7 +95,7 @@ class ViewController: UIViewController {
 
 extension ViewController {
     
-    private func recieved(newAssistZone: AssistZone) {
+    private func recieved(_ newAssistZone: AssistZone) {
         
         activeAssistZone = newAssistZone
         
@@ -115,24 +107,28 @@ extension ViewController {
         
         alertController.addAction(showNewZoneAction)
         
+        present(alertController, animated: true, completion: nil)
+        
     }
     
-    @objc private func recievedNewIncident(_ notification: NSNotification) {
+    private func recieved(_ newIncident: Incident) {
         
-        if let newIncident = notification.userInfo?["incident"] as? Incident {
-            
-            // TODO: Handle new incident notification and update UI
-            
-            print(newIncident)
-            
-            newIncidentsButton.setTitle("1", for: .normal)
-            
-            incidents.append(newIncident)
-            
-        }
+        
+        // TODO: Handle new incident notification and update UI
+        
+        print(newIncident)
+        
+        newIncidentsButton.setBackgroundImage(#imageLiteral(resourceName: "help_ac_red"), for: .normal)
+        
+        incidents.append(newIncident)
+        
+        updateMapWithNewIncident()
+        
     }
     
     private func updateMapViewWith(_ newAssistZone: AssistZone) {
+        
+        self.mapView.clear()
         
         let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 175, height: 175)))
         markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
@@ -146,13 +142,43 @@ extension ViewController {
         
         let testLocation = CLLocationCoordinate2D(latitude: newAssistZone.location.latitude, longitude: newAssistZone.location.longitude)
         let activeAssistZoneMarker = GMSMarker(position: testLocation)
-        activeAssistZoneMarker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
         activeAssistZoneMarker.iconView = markerImageTemplateView
         
         activeAssistZoneMarker.isDraggable = false
         activeAssistZoneMarker.map = mapView
         
         mapView.camera = GMSCameraPosition.camera(withLatitude: newAssistZone.location.latitude, longitude: newAssistZone.location.longitude, zoom: mapZoomLevel)
+    }
+    
+    private func updateMapWithNewIncident() {
+        
+        if incidents.count > 1 {
+            
+            for (index, incident) in incidents.enumerated() {
+                
+                if index != incidents.count - 1 {
+                    
+                    let markerToRemove = GMSMarker(position: incident.location)
+                    markerToRemove.map = nil
+                    
+                }
+            }
+            
+        }
+        
+        if let incident = incidents.last { // TODO: Update to be more dynamic
+            
+            newIncidentsButton.setBackgroundImage(#imageLiteral(resourceName: "help_in_red"), for: .normal)
+            
+            let marker = GMSMarker(position: incident.location)
+            marker.icon = #imageLiteral(resourceName: "incidentIcon")
+            marker.appearAnimation = .pop
+            marker.map = mapView
+            
+            mapView.camera = GMSCameraPosition.camera(withLatitude:  incident.location.latitude, longitude:  incident.location.longitude, zoom: mapZoomLevel)
+            
+        }
+        
     }
     
 }
@@ -195,12 +221,11 @@ extension ViewController {
         
         if activeAssistZone != nil {
             
-            mapView.camera = GMSCameraPosition(target: (activeAssistZone!.location), zoom: mapZoomLevel, bearing: 0, viewingAngle: 0)
+            mapView.camera = GMSCameraPosition.camera(withLatitude: (activeAssistZone?.location.latitude)!, longitude: (activeAssistZone?.location.longitude)!, zoom: mapZoomLevel)
             
         } else {
     
-            activeAssistZone = AssistZone(latitude: 34.0391623, longitude: -118.2435846)
-            self.updateMapViewWith(activeAssistZone!)
+            self.updateMapViewWith(AssistZone(latitude: kLatitude, longitude: kLongitude))
             
         }
         
@@ -208,15 +233,16 @@ extension ViewController {
     
     @IBAction private func showActiveIncidents(_ sender: UIButton) {
         
-        if let incident = incidents.first { // TODO: Update to be more dynamic
+        if incidents.count > 0 {
+            updateMapWithNewIncident()
+        } else {
+            let alertController = UIAlertController(title: "", message: "No active incidents", preferredStyle: .alert)
             
-            let marker = GMSMarker(position: incident.location)
-            marker.icon = #imageLiteral(resourceName: "incidentIcon")
-            marker.appearAnimation = .pop
-            marker.map = mapView
+            let cancelAction =  UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
-            mapView.camera = GMSCameraPosition.camera(withLatitude: marker.position.longitude, longitude: marker.position.longitude, zoom: mapZoomLevel)
+            alertController.addAction(cancelAction)
             
+            present(alertController, animated: true, completion: nil)
         }
         
     }

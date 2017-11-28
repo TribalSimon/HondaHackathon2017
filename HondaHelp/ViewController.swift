@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     private lazy var speechSynthesizer: AVSpeechSynthesizer = {
         
         let speechSynthesizer = AVSpeechSynthesizer()
-//        speechSynthesizer.delegate = self
         
         return speechSynthesizer
         
@@ -46,6 +45,8 @@ class ViewController: UIViewController {
         return AVSpeechSynthesisVoice()
         
     }()
+    
+    private var didTapMicButton: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
     
     private func sendCrashNotification() {
         
-        let crashJSON: [String: Any] = ["latitude": 34.0391623, "longitude": -118.2435846]
+        let crashJSON: [String: Any] = ["latitude": 34.047102, "longitude": -118.235147]
         
         socket.emit("accidentReport", with: [crashJSON])
         
@@ -82,10 +83,23 @@ extension ViewController {
     
     @IBAction private func micButtonTapped(_ sender: UIButton) {
         
-        let utterance = AVSpeechUtterance(string: "Do you need assistance?")
-        utterance.voice = voiceToUse
-        
-        speechSynthesizer.speak(utterance)
+        if !didTapMicButton {
+            
+            let utterance = AVSpeechUtterance(string: "Do you need assistance?")
+            utterance.voice = voiceToUse
+            
+            speechSynthesizer.speak(utterance)
+            
+            didTapMicButton = true
+            
+        } else {
+            
+            let utterance = AVSpeechUtterance(string: "Assistance is on the way")
+            utterance.voice = voiceToUse
+            
+            speechSynthesizer.speak(utterance)
+            sendCrashNotification()
+        }
         
         // TODO: if so send crash notification
         

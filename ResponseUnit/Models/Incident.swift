@@ -12,7 +12,7 @@ struct Incident {
     
     var location: CLLocationCoordinate2D
     
-    init(latitude: Double, longitude: Double) {
+    init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         
         self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
