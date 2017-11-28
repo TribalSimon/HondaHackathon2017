@@ -339,7 +339,7 @@ extension ViewController: GMSMapViewDelegate {
 
 extension ViewController: EventsViewControllerDelegate {
     
-    func closedTappedInEventsViewController(_ eventsViewController: EventsViewController) {
+    func closeTappedInEventsViewController(_ eventsViewController: EventsViewController) {
         
         closeMenu()
         

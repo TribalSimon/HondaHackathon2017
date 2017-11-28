@@ -10,7 +10,7 @@ import UIKit
 
 protocol EventsViewControllerDelegate {
     
-    func closedTappedInEventsViewController(_ eventsViewController: EventsViewController)
+    func closeTappedInEventsViewController(_ eventsViewController: EventsViewController)
     
 }
 
@@ -26,7 +26,7 @@ private extension EventsViewController {
     
     @IBAction private func closeTapped() {
         
-        delegate?.closedTappedInEventsViewController(self)
+        delegate?.closeTappedInEventsViewController(self)
         
     }
     
