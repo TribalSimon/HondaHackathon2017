@@ -130,14 +130,28 @@
             </objects>
             <point key="canvasLocation" x="162" y="853"/>
         </scene>
-        <!--View Controller-->
+        <!--Dispatch Vehicles View Controller-->
         <scene sceneID="IZC-vI-HEm">
             <objects>
-                <viewController id="Bdh-bC-bp2" sceneMemberID="viewController">
+                <viewController id="Bdh-bC-bp2" customClass="DispatchVehiclesViewController" customModule="HondaResponder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pbM-AT-81r">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="88"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRb-QK-u9N">
+                                <rect key="frame" x="1310" y="39" width="32" height="30"/>
+                                <state key="normal" title="Auto"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="P3l-D2-7WA" firstAttribute="trailing" secondItem="fRb-QK-u9N" secondAttribute="trailing" constant="24" id="KCf-8Z-uxz"/>
+                            <constraint firstItem="fRb-QK-u9N" firstAttribute="centerY" secondItem="P3l-D2-7WA" secondAttribute="centerY" id="ZDU-fO-4X1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P3l-D2-7WA"/>
                     </view>
+                    <connections>
+                        <outlet property="autoButton" destination="fRb-QK-u9N" id="a9h-pK-tVf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Meg-DQ-DLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
