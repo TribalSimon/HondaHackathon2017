@@ -18,8 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jy8-0h-e1L" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="936"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sfe-Om-Kcd" userLabel="Dispatch vehicles">
+                                <rect key="frame" x="0.0" y="936" width="1366" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="eRj-A0-ajr"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15j-fu-0KU">
                                 <rect key="frame" x="8" y="28" width="78" height="30"/>
@@ -45,18 +51,21 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JzQ-TL-Pba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Nb-Ya-LTK"/>
+                            <constraint firstItem="Sfe-Om-Kcd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3vG-mb-uDe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9R8-8Z-8eC" secondAttribute="bottom" id="8Ys-K6-4p6"/>
                             <constraint firstItem="jy8-0h-e1L" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CCw-JH-oOv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JzQ-TL-Pba" secondAttribute="trailing" id="Rze-dw-IIK"/>
                             <constraint firstItem="9R8-8Z-8eC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-320" id="aBZ-wt-SSi"/>
                             <constraint firstItem="9R8-8Z-8eC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aOW-5a-aZa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sfe-Om-Kcd" secondAttribute="bottom" id="bTX-Px-FOu"/>
+                            <constraint firstItem="Sfe-Om-Kcd" firstAttribute="top" secondItem="jy8-0h-e1L" secondAttribute="bottom" id="c9f-la-GzW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JzQ-TL-Pba" secondAttribute="bottom" id="cj6-Rk-JTH"/>
                             <constraint firstItem="15j-fu-0KU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="dZc-oE-ZvH"/>
                             <constraint firstItem="jy8-0h-e1L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dur-no-LVM"/>
                             <constraint firstItem="jy8-0h-e1L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gQb-hz-Edh"/>
                             <constraint firstItem="JzQ-TL-Pba" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kPF-HY-Alu"/>
-                            <constraint firstItem="jy8-0h-e1L" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="l6K-9X-Diw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JzQ-TL-Pba" secondAttribute="bottom" id="lAk-Vl-l16"/>
                             <constraint firstItem="15j-fu-0KU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="wPy-7e-HN6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sfe-Om-Kcd" secondAttribute="trailing" id="zj3-9c-Y6j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -68,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392" y="76"/>
+            <point key="canvasLocation" x="391.80087847730596" y="75.5859375"/>
         </scene>
         <!--Events View Controller-->
         <scene sceneID="UvR-rZ-P6j">
@@ -111,6 +120,7 @@
                             <constraint firstAttribute="trailing" secondItem="deR-fH-zWa" secondAttribute="trailing" id="uNi-nW-XK6"/>
                             <constraint firstItem="6vG-pc-nkA" firstAttribute="top" secondItem="1fW-oV-DLp" secondAttribute="top" id="v89-pa-I6H"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="goF-SZ-KYn"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3W1-h1-C9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
