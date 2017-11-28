@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+//        CrashNotification().send(latitude: 0, longitude: 0, success: {
+//            print("It worked")
+//        }, failure: {_ in })
     }
 
     override func didReceiveMemoryWarning() {
