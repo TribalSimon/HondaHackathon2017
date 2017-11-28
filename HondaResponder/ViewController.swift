@@ -47,6 +47,14 @@ class ViewController: UIViewController {
         return EventsViewController()
         
     }
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        eventsViewController.delegate = self
+        
+    }
 
     override func viewDidLayoutSubviews() {
         
@@ -106,6 +114,22 @@ extension GMSMapView {
 
 private extension ViewController {
     
+    private func closeMenu() {
+        
+        leadingConstraint.constant = -eventsViewController.view.frame.width
+        
+        UIView.animate(withDuration: 0.15, animations: { [weak self] in
+            
+            self?.view.layoutIfNeeded()
+            
+        })
+        
+    }
+    
+}
+
+private extension ViewController {
+    
     @IBAction private func openMenu() {
         
         leadingConstraint.constant = 0
@@ -115,6 +139,16 @@ private extension ViewController {
             self?.view.layoutIfNeeded()
             
         })
+        
+    }
+    
+}
+
+extension ViewController: EventsViewControllerDelegate {
+    
+    func closedTappedInEventsViewController(_ eventsViewController: EventsViewController) {
+        
+        closeMenu()
         
     }
     

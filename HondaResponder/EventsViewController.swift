@@ -8,8 +8,24 @@
 
 import UIKit
 
+protocol EventsViewControllerDelegate {
+    
+    func closedTappedInEventsViewController(_ eventsViewController: EventsViewController)
+    
+}
+
 class EventsViewController: UIViewController {
     
+    var delegate: EventsViewControllerDelegate?
     
+}
+
+private extension EventsViewController {
+    
+    @IBAction private func closeTapped() {
+        
+        delegate?.closedTappedInEventsViewController(self)
+        
+    }
     
 }
