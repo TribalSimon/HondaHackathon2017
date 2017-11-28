@@ -98,7 +98,7 @@ extension DispatchVehiclesViewController {
         }
         
         let car = cars[numberOfCarsDispatched - 1]
-        car.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        car.isEnabled = false
         
     }
     
@@ -119,7 +119,8 @@ extension DispatchVehiclesViewController {
         for _ in 0..<numberOfCars {
             
             let car = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: carWidthAndHeight, height: carWidthAndHeight)))
-            car.setImage(#imageLiteral(resourceName: "car"), for: .normal)
+            car.setImage(#imageLiteral(resourceName: "theOtherCar"), for: .normal)
+            car.setImage(#imageLiteral(resourceName: "car_icon_inac"), for: .disabled)
             car.tintColor = .black
             
             view.addSubview(car)
