@@ -43,3 +43,12 @@ target 'HondaResponder' do
   end
 
 end
+
+target 'ResponseUnit' do
+    
+    # Pods for ResponseUnit
+    alamofire_pods
+    google_maps_pods
+    socket_pods
+    
+end
