@@ -19,6 +19,8 @@ class ViewController: UIViewController {
             
             mapView.settings.compassButton = true
             
+            mapView.delegate = self
+            
         }
         
     }
@@ -73,6 +75,7 @@ class ViewController: UIViewController {
         for hotspot in hotspots {
             
             let marker = GMSMarker()
+            marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             marker.position = hotspot.coordinate
             marker.icon = markerImage
             marker.map = mapView
@@ -161,6 +164,27 @@ private extension ViewController {
             self?.overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
             
         })
+        
+    }
+    
+}
+
+extension ViewController: GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        
+        let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 175, height: 175)))
+        markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
+        markerImageTemplateView.backgroundColor = .blue
+        
+        let markerImage = UIImage(view: markerImageTemplateView)
+        
+        let marker = GMSMarker()
+        marker.position = coordinate
+        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        marker.isDraggable = true
+        marker.icon = markerImage
+        marker.map = mapView
         
     }
     
