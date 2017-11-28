@@ -36,6 +36,14 @@ class ViewController: UIViewController {
         
         mapView.surround(hotspots)
         
+        for hotspot in hotspots {
+            
+            let marker = GMSMarker()
+            marker.position = hotspot.coordinate
+            marker.map = mapView
+            
+        }
+        
     }
     
 }
@@ -79,7 +87,7 @@ extension GMSMapView {
 
 struct Hotspot {
     
-    private let coordinate: CLLocationCoordinate2D
+    let coordinate: CLLocationCoordinate2D
     
     var latitude: CLLocationDegrees {
         
