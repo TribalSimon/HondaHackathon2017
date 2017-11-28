@@ -16,9 +16,9 @@ class ViewController: UIViewController {
         didSet {
             
             mapView.mapType = .normal
-            
             mapView.settings.compassButton = true
-            
+            mapView.settings.zoomGestures = false
+            mapView.settings.rotateGestures = false
             mapView.delegate = self
             
         }
@@ -42,9 +42,9 @@ class ViewController: UIViewController {
     }()
     
     private let hotspots: [Hotspot] = [
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0450804, longitude: -118.2265129)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0447212, longitude: -118.2256368)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0447029, longitude: -118.2262455))
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.039589, longitude: -118.245151)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.040318, longitude: -118.242125)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.037411, longitude: -118.244990))
     ]
     
     private var eventsViewController: EventsViewController {
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         let markerImage = UIImage(view: markerImageTemplateView)
         
         mapView.clear()
-        mapView.surround(hotspots)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: 34.0391623, longitude: -118.2435846, zoom: 18.0)
         
         for hotspot in hotspots {
             
