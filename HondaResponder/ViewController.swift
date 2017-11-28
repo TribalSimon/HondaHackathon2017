@@ -187,6 +187,8 @@ extension ViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         
+        NotificationCenter.default.post(name: NSNotification.Name("carDispatched"), object: nil)
+        
         let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 175, height: 175)))
         markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
         markerImageTemplateView.backgroundColor = UIColor(red: 60 / 255, green: 155 / 255, blue: 215 / 255, alpha: 0.4)

@@ -27,6 +27,8 @@ class DispatchVehiclesViewController: UIViewController {
         
         view.addSubview(car)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(carDispatched), name: NSNotification.Name("carDispatched"), object: nil)
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -37,6 +39,16 @@ class DispatchVehiclesViewController: UIViewController {
         let originY = view.frame.height / 2 - car.frame.height / 2
         
         car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
+        
+    }
+    
+}
+
+extension DispatchVehiclesViewController {
+    
+    @objc private func carDispatched() {
+        
+        car.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         
     }
     
