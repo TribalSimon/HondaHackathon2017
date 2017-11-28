@@ -12,11 +12,16 @@ def google_maps_pods
   pod 'GoogleMaps'
 end
 
+def socket_pods
+  pod 'Starscream', '~> 3.0.2'
+end
+
 target 'HondaHelp' do
 
   # Pods for HondaHelp
   alamofire_pods
   google_maps_pods
+  socket_pods
 
   target 'HondaHelpTests' do
     inherit! :search_paths
@@ -30,6 +35,7 @@ target 'HondaResponder' do
   # Pods for HondaResponder
   alamofire_pods
   google_maps_pods
+  socket_pods
 
   target 'HondaResponderTests' do
     inherit! :search_paths

@@ -9,18 +9,21 @@ PODS:
   - GoogleMaps/Maps (2.4.0):
     - GoogleMaps/Base
   - ObjectMapper (3.1.0)
+  - Starscream (3.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireObjectMapper (~> 5.0)
   - GoogleMaps
+  - Starscream (~> 3.0.2)
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Starscream: b512c62f6706421221b5ceb2ba01a9f58aca5bea
 
-PODFILE CHECKSUM: 6dac19f14fd8f0b3b1baac20bfa0f1968bcbce86
+PODFILE CHECKSUM: d1a80e114a7cc02e75c09555e5980d21cdabcc66
 
 COCOAPODS: 1.3.1
