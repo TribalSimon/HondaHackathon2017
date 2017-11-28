@@ -71,6 +71,20 @@ class ViewController: UIViewController {
         
         eventsViewController.delegate = self
         
+        socket.on("newAccident", callback: { [weak self] data, _ in
+            
+            if let newAccidentObject = data.first as? [String: Any],
+                let latitude = newAccidentObject["latitude"] as? CLLocationDegrees,
+                let longitude = newAccidentObject["longitude"] as? CLLocationDegrees {
+                
+                let accidentLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                
+                self?.displayAccident(at: accidentLocation)
+                
+            }
+            
+        })
+        
         socket.connect()
         
         NotificationCenter.default.post(name: NSNotification.Name("loadCars"), object: nil, userInfo: ["numberOfCars": 3])
@@ -193,6 +207,22 @@ private extension ViewController {
             self?.overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
             
         })
+        
+    }
+    
+    private func displayAccident(at coordinate: CLLocationCoordinate2D) {
+        
+        let accidentImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 35, height: 35)))
+        accidentImageView.image = #imageLiteral(resourceName: "accident")
+        
+        let marker = GMSMarker()
+        marker.position = coordinate
+        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        marker.isDraggable = true
+        marker.iconView = accidentImageView
+        marker.map = mapView
+        
+        mapView.camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 18.0)
         
     }
     
