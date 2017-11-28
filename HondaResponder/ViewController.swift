@@ -23,12 +23,30 @@ class ViewController: UIViewController {
         
     }
     
+    @IBOutlet private var leadingConstraint: NSLayoutConstraint!
+    
     private let hotspots: [Hotspot] = [
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0450804, longitude: -118.2265129)),
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0421624, longitude: -118.2576791)),
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0211174, longitude: -118.2067797)),
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 33.9938161, longitude: -118.2610674))
     ]
+    
+    private var eventsViewController: EventsViewController {
+        
+        for viewController in childViewControllers {
+            
+            if let eventsViewController = viewController as? EventsViewController {
+                
+                return eventsViewController
+                
+            }
+            
+        }
+        
+        return EventsViewController()
+        
+    }
 
     override func viewDidLayoutSubviews() {
         
@@ -81,6 +99,22 @@ extension GMSMapView {
             for: GMSCoordinateBounds(coordinate: southwestMostCoordinate, coordinate: northeastMostCoordinate),
             insets: UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
         )!
+        
+    }
+    
+}
+
+private extension ViewController {
+    
+    @IBAction private func openMenu() {
+        
+        leadingConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.15, animations: { [weak self] in
+            
+            self?.view.layoutIfNeeded()
+            
+        })
         
     }
     
