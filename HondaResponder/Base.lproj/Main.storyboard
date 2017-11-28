@@ -142,18 +142,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRb-QK-u9N">
-                                <rect key="frame" x="1310" y="39" width="32" height="30"/>
-                                <state key="normal" title="Auto"/>
+                                <rect key="frame" x="1290" y="39" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="P3l-D2-7WA" firstAttribute="trailing" secondItem="fRb-QK-u9N" secondAttribute="trailing" constant="24" id="KCf-8Z-uxz"/>
+                            <constraint firstItem="P3l-D2-7WA" firstAttribute="trailing" secondItem="fRb-QK-u9N" secondAttribute="trailing" constant="40" id="KCf-8Z-uxz"/>
                             <constraint firstItem="fRb-QK-u9N" firstAttribute="centerY" secondItem="P3l-D2-7WA" secondAttribute="centerY" id="ZDU-fO-4X1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P3l-D2-7WA"/>
                     </view>
                     <connections>
-                        <outlet property="autoButton" destination="fRb-QK-u9N" id="a9h-pK-tVf"/>
+                        <outlet property="clearButton" destination="fRb-QK-u9N" id="a9h-pK-tVf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Meg-DQ-DLm" userLabel="First Responder" sceneMemberID="firstResponder"/>

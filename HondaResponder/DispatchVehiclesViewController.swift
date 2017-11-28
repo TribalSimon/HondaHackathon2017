@@ -10,7 +10,7 @@ import UIKit
 
 class DispatchVehiclesViewController: UIViewController {
     
-    @IBOutlet private weak var autoButton: UIButton!
+    @IBOutlet private weak var clearButton: UIButton!
     
     private var numberOfCarsDispatched = 0
     
@@ -39,17 +39,17 @@ class DispatchVehiclesViewController: UIViewController {
             
             let car = cars.first!
             
-            let originX = (autoButton.frame.minX + 24) / 2 - car.frame.width / 2
+            let originX = (clearButton.frame.minX + 24) / 2 - car.frame.width / 2
             
             car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
             
         } else {
             
-            let leadingPadding: CGFloat = 24
+            let leadingPadding: CGFloat = 40
             
-            let trailingPadding: CGFloat = 24
+            let trailingPadding: CGFloat = 56
             
-            let totalSpaceToWorkWith: CGFloat = autoButton.frame.minX - trailingPadding - carWidthAndHeight - leadingPadding
+            let totalSpaceToWorkWith: CGFloat = clearButton.frame.minX - trailingPadding - leadingPadding
             
             let totalWidthOfCars: CGFloat = carWidthAndHeight * CGFloat(numberOfCars)
             
@@ -65,7 +65,7 @@ class DispatchVehiclesViewController: UIViewController {
                 
                 car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
                 
-                originX = originX + spacingInBetweenEachCar
+                originX = originX + carWidthAndHeight + spacingInBetweenEachCar
                 
             }
             
@@ -129,17 +129,17 @@ extension DispatchVehiclesViewController {
             
             let car = cars.first!
             
-            let originX = (autoButton.frame.minX + 24) / 2 - car.frame.width / 2
+            let originX = (clearButton.frame.minX + 24) / 2 - car.frame.width / 2
             
             car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
             
         } else {
             
-            let leadingPadding: CGFloat = 24
+            let leadingPadding: CGFloat = 40
             
-            let trailingPadding: CGFloat = 24
+            let trailingPadding: CGFloat = 56
             
-            let totalSpaceToWorkWith: CGFloat = autoButton.frame.minX - trailingPadding - carWidthAndHeight - leadingPadding
+            let totalSpaceToWorkWith: CGFloat = clearButton.frame.minX - trailingPadding - leadingPadding
             
             let totalWidthOfCars: CGFloat = carWidthAndHeight * CGFloat(numberOfCars)
             
@@ -155,7 +155,7 @@ extension DispatchVehiclesViewController {
                 
                 car.frame = CGRect(origin: CGPoint(x: originX, y: originY), size: car.frame.size)
                 
-                originX = originX + spacingInBetweenEachCar
+                originX = originX + carWidthAndHeight + spacingInBetweenEachCar
                 
             }
             
