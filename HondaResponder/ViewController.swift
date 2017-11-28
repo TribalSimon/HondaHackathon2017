@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     @IBOutlet private var overlay: UIView!
     
+    private var accidentMarkers: [GMSMarker] = []
+    
     private var shouldDispatchCar = true
     
     private lazy var socket: SocketIOClient = {
@@ -115,6 +117,7 @@ class ViewController: UIViewController {
             marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             marker.position = hotspot.coordinate
             marker.icon = markerImage
+            marker.isTappable = false
             marker.map = mapView
             
         }
@@ -222,6 +225,8 @@ private extension ViewController {
         marker.iconView = accidentImageView
         marker.map = mapView
         
+        accidentMarkers.append(marker)
+        
         mapView.camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 18.0)
         
     }
@@ -274,6 +279,59 @@ extension ViewController: GMSMapViewDelegate {
         ]
         
         socket.emit("vehicleAssignment", with: [vehicleAssignmentJSON])
+        
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        if accidentMarkers.contains(marker) {
+            
+            let carOneAction = UIAlertAction(title: "Car 1", style: .default, handler: { _ in
+                
+                let vehicleAssignmentJSON: [String: Any] = [
+                    "carID": 1,
+                    "latitude": marker.position.latitude,
+                    "longitude": marker.position.longitude
+                ]
+                
+                self.socket.emit("vehicleAccident", with: [vehicleAssignmentJSON])
+                
+            })
+            
+            let carTwoAction = UIAlertAction(title: "Car 2", style: .default, handler: { _ in
+                
+                let vehicleAssignmentJSON: [String: Any] = [
+                    "carID": 1,
+                    "latitude": marker.position.latitude,
+                    "longitude": marker.position.longitude
+                ]
+                
+                self.socket.emit("vehicleAccident", with: [vehicleAssignmentJSON])
+                
+            })
+            
+            let carThreeAction = UIAlertAction(title: "Car 3", style: .default, handler: { _ in
+                
+                let vehicleAssignmentJSON: [String: Any] = [
+                    "carID": 1,
+                    "latitude": marker.position.latitude,
+                    "longitude": marker.position.longitude
+                ]
+                
+                self.socket.emit("vehicleAccident", with: [vehicleAssignmentJSON])
+                
+            })
+            
+            let alertController = UIAlertController(title: "Dispatch", message: "Please choose a car to dispatch.", preferredStyle: .alert)
+            alertController.addAction(carOneAction)
+            alertController.addAction(carTwoAction)
+            alertController.addAction(carThreeAction)
+            
+            present(alertController, animated: true, completion: nil)
+            
+        }
+        
+        return true
         
     }
     
