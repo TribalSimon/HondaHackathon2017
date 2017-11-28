@@ -29,9 +29,8 @@ class ViewController: UIViewController {
     
     private let hotspots: [Hotspot] = [
         Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0450804, longitude: -118.2265129)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0421624, longitude: -118.2576791)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0211174, longitude: -118.2067797)),
-        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 33.9938161, longitude: -118.2610674))
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0447212, longitude: -118.2256368)),
+        Hotspot(coordinate: CLLocationCoordinate2D(latitude: 34.0447029, longitude: -118.2262455))
     ]
     
     private var eventsViewController: EventsViewController {
