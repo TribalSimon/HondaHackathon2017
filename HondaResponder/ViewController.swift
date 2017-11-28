@@ -190,6 +190,13 @@ extension ViewController: GMSMapViewDelegate {
         let markerImageTemplateView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 175, height: 175)))
         markerImageTemplateView.layer.cornerRadius = markerImageTemplateView.frame.width / 2
         markerImageTemplateView.backgroundColor = UIColor(red: 60 / 255, green: 155 / 255, blue: 215 / 255, alpha: 0.4)
+        
+        let car = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 35, height: 35)))
+        car.backgroundColor = .black
+        car.center = markerImageTemplateView.center
+        
+        markerImageTemplateView.addSubview(car)
+        
         let markerImage = UIImage(view: markerImageTemplateView)
         
         let marker = GMSMarker()
